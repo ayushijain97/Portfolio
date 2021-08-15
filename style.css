@@ -25,7 +25,19 @@ html{
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+/* typing  effect */
+.typing{
+    position: relative;
+    margin-left: 10px;
+}
+.typing::after{
+    content: "";
+    right: -5px;
+    width: 1px;
+    height: 5%;
+    border-right: 6px solid white;
 
+}
 /* all similar content styling codes */
 section{
     padding: 100px 0;
@@ -270,7 +282,7 @@ section .title::after{
 .services .title::after,
 .teams .title::after{
     background: #111;
-    content: "In What I Work On";
+    content: "What I Work On";
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
@@ -299,9 +311,11 @@ section .title::after{
     color: #fff;
 }
 .services .serv-content .card .text{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
     margin: 10px 0 7px 0;
+    color: #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
 }
  .link{
     font-size: px;
@@ -380,10 +394,10 @@ section .title::after{
     width: 80%;
 }
 .skills-content .right .php::before{
-    width: 50%;
+    width: 40%;
 }
 .skills-content .right .mysql::before{
-    width: 70%;
+    width: 30%;
 }
 
 /* teams section styling */

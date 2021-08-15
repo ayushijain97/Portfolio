@@ -30,13 +30,24 @@ document.querySelector(".navbar .menu li a").addEventListener("click",function()
 
 var i = 0;
 var txt = "Web-Developer";
-var speed = 50;
+var speed = 250;
+var letter="";
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.querySelector(".typing-1").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
+(function typeWriter() {
+  letter=txt.slice(0,++i);
+  document.querySelector(".typing").textContent = letter;
+  if(letter.length === txt.length){
+    i=0;
   }
-}
-document.querySelector(".hire").addEventListener("click",typeWriter);
+  setTimeout(typeWriter,speed);
+}());
+
+
+(function typeWriter() {
+  letter = txt.slice(0, ++i);
+  document.querySelector(".typing-2").textContent = letter;
+  if (letter.length === txt.length) {
+    i = 0;
+  }
+  setTimeout(typeWriter, speed);
+})();
