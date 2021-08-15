@@ -338,6 +338,18 @@ section .title::after{
     font-weight: 600;
     margin-bottom: 10px;
 }
+.skills .skills-content .left .technology{
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    
+}
+.skills .skills-content .left .size{
+    padding-top: 10px;
+    padding-left: 20px;
+    color: rgb(47, 41, 41);
+}
 .skills .skills-content .left p{
     text-align: justify;
 }

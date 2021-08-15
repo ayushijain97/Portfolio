@@ -15,18 +15,17 @@ document.addEventListener('scroll', function(e) {
 document.querySelector(".scroll-up-btn").addEventListener("click",function()
 {
         document.querySelector("html").animate({scrollTop: 0});
-//     // removing smooth scroll on slide-up button click
-//     $("html").css("scrollBehavior", "auto");
-        document.querySelector("html").css("scrollBehavior", "auto");
+        const offsetTop=document.querySelector("html").offsetTop;
+        scroll({
+          top: offsetTop,
+          behavior: "auto",
+        });
   });
 document.querySelector(".menu-btn").addEventListener("click",function(){
     document.querySelector(".navbar .menu").classList.toggle("active");
     document.querySelector(".menu-btn i").classList.toggle("active");
 });
 
-document.querySelector(".navbar .menu li a").addEventListener("click",function(){
-   document.querySelector("html").css("scrollBehavior", "smooth");
-})
 
 var i = 0;
 var txt = "Web-Developer";
