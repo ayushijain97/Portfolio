@@ -65,7 +65,7 @@ var letter="";
 // sending form to database
 
 const myForm = document.querySelector(".form");
-let name = document.getElementById("name");
+let userName = document.getElementById("name");
 let email = document.getElementById("email");
 let subject = document.getElementById("subject");
 let message = document.getElementById("message");
@@ -74,7 +74,7 @@ myForm.addEventListener("submit",async(e)=>{
     e.preventDefault();
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/posts",
+          "https://ayushi-web-scrapper.herokuapp.com/message",
           {
             method: "POST",
             headers: {
@@ -82,10 +82,10 @@ myForm.addEventListener("submit",async(e)=>{
             },
             body: JSON.stringify({
               // your expected POST request payload goes here
-                name:name.value,
-                email:email.value,
-                subject:subject.value,
-                 message:message.value
+              name: userName.value,
+              email: email.value,
+              subject: subject.value,
+              message: message.value,
             }),
           }
         );
