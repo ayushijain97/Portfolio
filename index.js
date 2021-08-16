@@ -61,3 +61,40 @@ var letter="";
   }
   setTimeout(typeWriter, speed);
 })();
+
+// sending form to database
+
+const myForm = document.querySelector(".form");
+let name = document.getElementById("name");
+let email = document.getElementById("email");
+let subject = document.getElementById("subject");
+let message = document.getElementById("message");
+
+myForm.addEventListener("submit",async(e)=>{
+    e.preventDefault();
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              // your expected POST request payload goes here
+                name:name.value,
+                email:email.value,
+                subject:subject.value,
+                 message:message.value
+            }),
+          }
+        );
+        const data = await response.json();
+        // enter you logic when the fetch is successful
+        console.log(data);
+      } catch (error) {
+        // enter your logic for when there is an error (ex. error toast)
+
+        console.log(error);
+      }
+ });
